@@ -1,0 +1,14 @@
+%table.table-condensed.table-striped.table-bordered.span3
+  %thead
+    %tr
+      %th= 'Name'
+      %th= 'Action'
+
+  %tbody
+    - unless leaders.nil?
+      - leaders.each do |l|
+        %tr
+          %td= link_to l.name, user_path(l)
+          %td.td-chirp
+            = link_to 'do not follow', do_not_follow_url(:id => l.id, :follower_id => user_id, :leader_id => l.id), :class => 'btn btn-small btn-chirp'
+

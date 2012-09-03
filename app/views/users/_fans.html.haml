@@ -1,0 +1,11 @@
+%table.table-condensed.table-striped.table-bordered.span3
+  %thead
+    %tr
+      %th= 'Name'
+
+  %tbody
+
+  - unless fans.nil?
+    - fans.each do |f|
+      %tr
+        %td= link_to f.name, user_path(f)

@@ -1,0 +1,39 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    %title= content_for?(:title) ? yield(:title) : "Chirp"
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = yield(:head)
+
+  %body
+    %div.navbar.navbar-inverse.navbar-fixed-top
+      %div.navbar-inner
+      %div.container
+        %a.btn.btn-navbar{ 'data-target' => '.nav-collapse', 'data-toggle' => 'collapse' }
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+
+        %a.brand{ :href=>'#'}= 'Chirp'
+
+        %div.nav-collapse.collapse
+          %ul.nav.nav-pills
+            %li.active
+              %a{ :href => '#'}= 'Home'
+
+            %li
+              %a{ :href => '#about'}= 'About'
+
+            %li
+              %a{ :href => '#contact'}= 'Contact'
+
+        %div.pixel-offset-chirp
+          = yield
+
+        %footer

@@ -1,0 +1,13 @@
+%table.table-condensed.table-striped.table-bordered.span3
+  %thead
+    %tr
+      %th= 'Name'
+      %th= 'Action'
+
+  %tbody
+  - unless friends.nil?
+    - friends.each do |fr|
+      %tr
+        %td= link_to fr.name, user_path(fr)
+        %td.td-chirp= link_to 'follow', follow_url(:id => user_id, :follower_id => user_id, :leader_id => fr.id), :class => 'btn-chirp btn btn-small'
+

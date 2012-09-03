@@ -1,0 +1,21 @@
+
+%table.table-condensed.table-striped.table-bordered#users_table
+  %caption
+    %h3 Users
+
+  %thead
+    %tr
+      %th= 'Name'
+      %th= 'Action'
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.name
+        %td.td-chirp
+          = link_to 'show', user, :class => 'btn-chirp btn btn-small'
+          = link_to 'delete', user, :confirm => 'Are you sure?', :method => :delete, :class => 'btn-chirp btn btn-small'
+
+%br
+
+%h#add-user-link= link_to 'Add user', new_user_path

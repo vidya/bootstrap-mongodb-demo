@@ -1,0 +1,29 @@
+
+%p#notice= notice
+
+%h1= @user_props[:name]
+
+%div.tabbable
+  %ul.nav.nav-pills#myTab
+    %li#li_fans
+      %a{'href' => '#div_fans', 'data-toggle' => 'tab'}=  'Fans'
+
+    %li#li_leaders
+      %a{'href' => '#div_leaders', 'data-toggle' => 'tab'}= 'Leaders'
+
+    %li#li_friends
+      %a{'href' => '#div_friends', 'data-toggle' => 'tab'}= 'Friends'
+
+.clearfix
+
+%div.tab-content
+  #div_fans.tab-pane
+    = render :partial => 'fans', :locals => { :fans => @user_props[:fans] }
+
+  #div_leaders.tab-pane
+    = render :partial => 'leaders', :locals => { :user_id => @user_props[:id], :leaders => @user_props[:leaders] }
+
+  #div_friends.tab-pane
+    = render :partial => 'friends', :locals => { :user_id => @user_props[:id], :friends => @user_props[:friends] }
+
+%h4= link_to 'Show users', users_path
