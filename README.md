@@ -27,14 +27,16 @@ bootstrap-mongodb-demo
         Do not create a login system for this exercise.
 
  - it uses
-    - ruby 1.9.3p194
-    - Rails 3.2.8
+    ruby 1.9.3p194
+    Rails 3.2.8
 
-    - twitter bootstrap
-    - mongodb and mongoid
+    twitter bootstrap
+    mongodb and mongoid
+
+ - 'screen_shots' directory contains application screen images
 
  - run 'bundle exec rake db:seed' to pre-populate the database with test users
 
  - to run this application you need to
-    - have a mongodb server running
-    - have a mongodb database with name 'chirp_development'
+    have a mongodb server running
+    have a mongodb database with name 'chirp_development'
