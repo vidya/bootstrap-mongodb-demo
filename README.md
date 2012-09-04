@@ -32,3 +32,5 @@ bootstrap-mongodb-demo
 
     - twitter bootstrap
     - mongodb and mongoid
+
+ - run 'bundle exec rake db:seed' to pre-populate the database with test users
