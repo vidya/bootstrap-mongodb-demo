@@ -10,11 +10,12 @@
 
   %tbody
     - @users.each do |user|
+    - confirm_message = "Do you want to delete user: #{user.name}"
       %tr
         %td= user.name
         %td.td-chirp
           = link_to 'show', user, :class => 'btn-chirp btn btn-small'
-          = link_to 'delete', user, :confirm => 'Are you sure?', :method => :delete, :class => 'btn-chirp btn btn-small'
+          = link_to 'delete', user, :confirm => confirm_message, :method => :delete, :class => 'btn-chirp btn btn-small'
 
 %br
 

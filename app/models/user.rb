@@ -35,16 +35,20 @@ class User
   end
 
   def separate_from_fans
-    fans.each do |fan_id|
-      fan = User.find fan_id
-      fan.remove_leader self.id
+    unless fans.nil?
+      fans.each do |fan_id|
+        fan = User.find fan_id
+        fan.remove_leader self.id
+      end
     end
   end
 
   def separate_from_leaders
-    leaders.each do |leader_id|
-      leader = User.find leader_id
-      leader.remove_fan self.id
+    unless leaders.nil?
+      leaders.each do |leader_id|
+        leader = User.find leader_id
+        leader.remove_fan self.id
+      end
     end
   end
 

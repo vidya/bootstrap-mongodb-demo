@@ -34,3 +34,7 @@ bootstrap-mongodb-demo
     - mongodb and mongoid
 
  - run 'bundle exec rake db:seed' to pre-populate the database with test users
+
+ - to run this application you need to
+    - have a mongodb server running
+    - have a mongodb database with name 'chirp_development'
