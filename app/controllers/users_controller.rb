@@ -46,14 +46,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user           = User.new params[:user]
-    @user.fans      = []
-    @user.leaders   = []
+    user_name = params[:user][:name]
 
-    if @user.save
-      redirect_to @user, :notice => 'User was successfully created.'
+    if User.find_by(name: user_name)
+      redirect_to(users_url)
     else
-      render :action => "new"
+      @user           = User.new params[:user]
+      @user.fans      = []
+      @user.leaders   = []
+
+      if @user.save
+        redirect_to(users_url)
+      else
+        render :action => :new
+      end
     end
   end
 
